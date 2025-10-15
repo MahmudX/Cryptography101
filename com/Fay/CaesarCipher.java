@@ -8,8 +8,10 @@ public class CaesarCipher {
 
         for (int i = 0; i < plainText.length(); ++i) {
             char plainChar = plainText.charAt(i);
-            int painCharIndex = Alphabets.UPPER.indexOf(plainChar);
-            int cipherIndex = Math.floorMod(painCharIndex + key, Alphabets.UPPER.length());
+            int plainCharIndex = Alphabets.UPPER.indexOf(plainChar);
+            if (plainCharIndex == -1)
+                continue;
+            int cipherIndex = Math.floorMod(plainCharIndex + key, Alphabets.UPPER.length());
             cipherText += Alphabets.UPPER.charAt(cipherIndex);
         }
 

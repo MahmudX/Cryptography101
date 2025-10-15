@@ -1,5 +1,8 @@
 package com.Fay;
 
-public class Alphabets {
+public final class Alphabets {
+    private Alphabets() {
+    };
+
     public static final String UPPER = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 }
