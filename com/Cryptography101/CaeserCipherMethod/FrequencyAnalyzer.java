@@ -1,5 +1,7 @@
-package com.Fay;
+package com.Cryptography101.CaeserCipherMethod;
 
+import com.Cryptography101.Utilities.Alphabets;
+import com.Cryptography101.Utilities.Console;
 import java.util.HashMap;
 import java.util.Map;
 

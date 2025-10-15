@@ -1,4 +1,4 @@
-package com.Fay;
+package com.Cryptography101.Utilities;
 
 public class Console {
     public static <T> void writeLine(T object) {

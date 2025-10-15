@@ -1,5 +1,6 @@
-// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
-package com.Fay;
+package com.Cryptography101.CaeserCipherMethod;
+
+import com.Cryptography101.Utilities.Alphabets;
 
 public class CaesarCipher {
     public String Encrypt(String plainText, int key) {
