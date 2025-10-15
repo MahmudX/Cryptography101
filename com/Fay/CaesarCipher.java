@@ -2,17 +2,15 @@
 package com.Fay;
 
 public class CaesarCipher {
-    private String Alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
     public String Encrypt(String plainText, int key) {
         plainText = plainText.toUpperCase();
         String cipherText = "";
 
         for (int i = 0; i < plainText.length(); ++i) {
             char plainChar = plainText.charAt(i);
-            int painCharIndex = Alphabet.indexOf(plainChar);
-            int cipherIndex = Math.floorMod(painCharIndex + key, Alphabet.length());
-            cipherText += Alphabet.charAt(cipherIndex);
+            int painCharIndex = Alphabets.UPPER.indexOf(plainChar);
+            int cipherIndex = Math.floorMod(painCharIndex + key, Alphabets.UPPER.length());
+            cipherText += Alphabets.UPPER.charAt(cipherIndex);
         }
 
         return cipherText;
@@ -24,9 +22,9 @@ public class CaesarCipher {
 
         for (int i = 0; i < cipherText.length(); ++i) {
             char cipherChar = cipherText.charAt(i);
-            int cipherCharIndex = Alphabet.indexOf(cipherChar);
-            int plainIndex = Math.floorMod(cipherCharIndex - key, Alphabet.length());
-            plainText += Alphabet.charAt(plainIndex);
+            int cipherCharIndex = Alphabets.UPPER.indexOf(cipherChar);
+            int plainIndex = Math.floorMod(cipherCharIndex - key, Alphabets.UPPER.length());
+            plainText += Alphabets.UPPER.charAt(plainIndex);
         }
 
         return plainText;
