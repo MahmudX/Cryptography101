@@ -1,5 +1,6 @@
 package com.Cryptography101.CaeserCipherMethod;
 
+import com.Cryptography101.LanguageDetection.LanguageDetector;
 import com.Cryptography101.Utilities.Alphabets;
 import com.Cryptography101.Utilities.Console;
 
@@ -7,10 +8,14 @@ import java.util.Map;
 
 public class CaesarCracker {
     public void bruteForeceCrack(String cipherText) {
+        var languageDetector = new LanguageDetector();
         for (var key = 0; key < Alphabets.UPPER.length(); ++key) {
             var caesar = new CaesarCipher();
             String plainString = caesar.Decrypt(cipherText, key);
-            Console.writeLine(plainString);
+            if (languageDetector.isEnglish(plainString)) {
+                Console.writeLine("Caeser cipher with %s key the result is ->\n%s", key, plainString);
+                break;
+            }
         }
     }
 
