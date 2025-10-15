@@ -13,7 +13,7 @@ if ($JavaFiles.Count -eq 0) {
     Write-Error "No Java files found in project!"
     exit 1
 }
-javac -d $BuildDir $JavaFiles
+javac -encoding UTF-8 -d $BuildDir $JavaFiles
 
 # 3️⃣ Find class containing main method
 $MainClass = $null

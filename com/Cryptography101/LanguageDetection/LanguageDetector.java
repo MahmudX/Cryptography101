@@ -24,4 +24,12 @@ public class LanguageDetector {
         }
         return matches;
     }
+
+    public boolean isEnglish(String text) {
+        int matches = countEnglishWordInText(text);
+
+        // If the text contains 60% english word
+        // then we can assume that the text is in English
+        return (float) matches / text.split(" ").length * 100 >= 60;
+    }
 }
